@@ -1,0 +1,10 @@
+rules:
+  - id: detect-custom-tokens
+    languages: [javascript, typescript]
+    severity: ERROR
+    message: "Possible hardcoded token detected"
+    patterns:
+      - pattern: const $VAR = "$VAL";
+      - metavariable-regex:
+          metavariable: "$VAL"
+          regex: "^[A-Za-z0-9_-]{20,}$"
