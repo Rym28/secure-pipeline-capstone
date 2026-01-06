@@ -1,0 +1,6 @@
+rules:
+  - id: no-eval
+    languages: [javascript]
+    severity: ERROR
+    message: "Avoid eval(); it can lead to remote code execution."
+    pattern: eval(...)
